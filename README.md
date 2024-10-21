@@ -1,2 +1,1 @@
-# Yolo
-Ejercicio yolo
+# Yolov5
