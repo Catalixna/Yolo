@@ -23,10 +23,18 @@ model.multi_label = False  # NMS multiple labels per box
 model.max_det = 1000  # maximum number of detections per image
 
 # take a picture with the camera
-st.title("Detección de Objetos en Imágenes")
+st.markdown(
+    """
+    <h1 style='text-align: center;'>
+        <span style='color: #2a3a65;'>Reconocimiento </span>
+        <span style='color: #f39c12;'>de </span>
+        <span style='color: #e74c3c;'>Imágenes</span>
+    </h1>
+    """,
+    unsafe_allow_html=True)
 
 with st.sidebar:
-            st.subheader('Parámetros de Configuración')
+            st.subheader('_Parámetros de Configuración_')
             model.iou= st.slider('Seleccione el IoU',0.0, 1.0)
             st.write('IOU:', model.iou)
 
@@ -35,7 +43,7 @@ with st.sidebar:
             st.write('Conf:', model.conf)
 
 
-picture = st.camera_input("Capturar foto",label_visibility='visible' )
+picture = st.camera_input("_Capturar foto_",label_visibility='visible' )
 
 if picture:
     #st.image(picture)
